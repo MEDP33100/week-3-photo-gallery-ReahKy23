@@ -49,4 +49,21 @@ const photos = [
     },
 ];
 
-console.log('hello');
+//display all images initially
+function displayPhotos(){
+
+    //this gets the gallery container from the DOM (html)
+    const gallery = document.getElementById('gallery');
+    
+    //go through all the photos in the "photo" array
+    photos.forEach(photo => {
+        const img = document.createElement('img');
+        //sets the imgs source to the url 
+        img.src = photo.url;
+
+        //this adds the images to the gallery
+        gallery.appendChild(img);
+    });
+
+}
+window.onload = displayPhotos
